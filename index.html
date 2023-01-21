@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title> PortalCore - Core of Fast Travel </title>
+</head>
+
+<body>
+<script>
+    <!--    make navbar disappear when scrolling down and appear when scrolling up-->
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        const currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-150px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+<nav id="navbar">
+    <div class="nav-logo">
+        <a href="index.html">
+            <img src="./assets/Logo.png" width=469 alt="Portal Core">
+        </a>
+    </div>
+    <div class="nav-items">
+        <a href="#portal">Das Portal</a>
+        <a href="#locations">Locations</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Kontakt</a>
+    </div>
+</nav>
+
+<main>
+    <section class="introduction-section-container">
+        <section class="introduction-section">
+            <h1><span id="first">DIE ZUKUNFT <br> <span id="second">BEGINNT <span id="third"><a
+                    href="#portal">HIER</a></span></span></span></h1>
+        </section>
+    </section>
+
+    <section class="portal-section-container">
+        <section class="portal-section">
+            <div class="portal-locations-container">
+                <h3>Stand<span class="hex">&#x2B21;</span>rte</h3>
+                <div class="slider">
+                    <!--                    we want to add two arrows for the slider and a p tag as text, it will be a text slider -->
+                    <img src="./assets/arrow_back.svg" alt="arrow back" class="clickable-item" id="back-arrow">
+                    <p class="fade-in">Portale</p>
+                    <img src="./assets/arrow_forward.svg" alt="arrow forward" class="clickable-item" id="forward-arrow">
+                </div>
+            </div>
+            <img src="./assets/Portal.png" alt="Portal" id="portal">
+        </section>
+    </section>
+
+    <section id="portal-info-section">
+        <div style="text-align: center;">
+            <img src="./assets/Karte.png" width=1107 alt="Weltkarte">
+        </div>
+        <ul>
+            <li>Umweltfreundlich</li>
+            <li>Schnelles Reisen</li>
+            <li>Günstig</li>
+        </ul>
+        <p>
+            Wir von Portal Core präsentieren die neueste Technologie aus der Reisewelt: Die Portaltechnologie! <br>
+            Unser Ziel ist es rund um den Globus bahnhofartige Zentren mit Portalen statt Gleisen zu errichten. Durch
+            die
+            Nutzung dieser Portalbahnhöfe, oder Portal Stations, kommt man im handumdrehen überall hin. Dies spart nicht
+            nur
+            lästige Reisezeit und Flugzeugemissionen, sondern auch Geld, da unsere Portaltechnologie äußerst
+            energiesparend
+            und somit überraschend günstig ist. Vergessen sie lange Flugreisen und reisen sie´ab sofort mit Portal Core!
+        </p>
+    </section>
+
+    <section id="team">
+        <h2> Unser Team </h2>
+        <ul>
+            <li>Niclas Grüschow</li>
+            <li>Maxim Kirsch</li>
+            <li>Omar El Hussein</li>
+            <li>Eleni Papani</li>
+        </ul>
+    </section>
+
+    <section>
+        <ul>
+            <li><a href="./assets/Plakat.jpg" download>Plakat</a></li>
+            <li><a href="./assets/Radiospot.mp3" download>Radiospot</a></li>
+            <li><a href="./assets/Quellen.pdf" download>Quellen</a></li>
+            <li>Kontakt</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>© 2021 PortalCore</p>
+    <a href="https://twitter.com/"> Twitter </a>
+    <a href="https://instagram.com/"> Instagram </a>
+    <a href="https://www.youtube.com/"> Youtube </a>
+</footer>
+
+<script>
+    const locations = [
+        {
+            name: "PORTALE",
+            image: "./assets/Portal_XP.png"
+        },
+        {
+            name: "NYC",
+            image: "./assets/Portal_NYC.png"
+        },
+        {
+            name: "London",
+            image: "./assets/Portal_London.png"
+        },
+        {
+            name: "Paris",
+            image: "./assets/Portal_Paris.png"
+        },
+        {
+            name: "Ort5",
+            image: "./assets/Portal_Ort5.png"
+        },
+        {
+            name: "Ort1",
+            image: "./assets/Portal_Ort1.png"
+        }
+    ];
+
+    let currentLocation = 0;
+
+    const locationText = document.querySelector(".slider > p");
+    const locationImage = document.querySelector(".portal-section > img");
+
+    const nextLocation = () => {
+        console.log("next location")
+        currentLocation++;
+        if (currentLocation > locations.length - 1) {
+            currentLocation = 0;
+        }
+        locationText.classList.add("slide-out");
+        locationImage.src = locations[currentLocation].image;
+    }
+
+    const previousLocation = () => {
+        console.log("previous location")
+        currentLocation--;
+        if (currentLocation < 0) {
+            currentLocation = locations.length - 1;
+        }
+        locationText.classList.add("slide-out-right");
+        locationImage.src = locations[currentLocation].image;
+    }
+
+    locationText.addEventListener("animationend", (evt) => {
+        if (evt.animationName === "slideOut") {
+            locationText.classList.remove("slide-out");
+            locationText.classList.add("slide-in");
+            locationText.textContent = locations[currentLocation].name;
+        } else if (evt.animationName === "slideIn") {
+            locationText.classList.remove("slide-in");
+        }
+    });
+
+    locationText.addEventListener("animationend", (evt) => {
+        if (evt.animationName === "slideOutRight") {
+            locationText.classList.remove("slide-out-right");
+            locationText.classList.add("slide-in-right");
+            locationText.textContent = locations[currentLocation].name;
+            console.log("slide out right")
+        } else if (evt.animationName === "slideInRight") {
+            locationText.classList.remove("slide-in-right");
+        }
+    });
+
+    document.getElementById("back-arrow").addEventListener("click", previousLocation);
+    document.getElementById("forward-arrow").addEventListener("click", nextLocation);
+</script>
+
+</body>
+
+</html>
