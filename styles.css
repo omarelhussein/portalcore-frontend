@@ -252,6 +252,7 @@ main {
     font-family: "Actay";
     src: local("Actay"), url("./font/Actay-Regular.otf") format("opentype");
     font-weight: normal;
+    font-display: fallback;
 }
 
 @font-face {
@@ -259,24 +260,28 @@ main {
     src: local("Actay"), url("./font/Actay-RegularItalic.otf") format("opentype");
     font-style: italic;
     font-weight: normal;
+    font-display: fallback;
 }
 
 @font-face {
     font-family: "Actay";
     src: local("Actay"), url("./font/ActayCondensed-Thin.otf") format("opentype");
     font-weight: 100;
+    font-display: fallback;
 }
 
 @font-face {
     font-family: "Actay";
     src: local("Actay"), url("./font/ActayCondensed-ThinItalic.otf") format("opentype");
     font-style: italic;
+    font-display: fallback;
 }
 
 @font-face {
     font-family: "Actay";
     src: local("Actay"), url("./font/ActayWide-Bold.otf") format("opentype");
     font-weight: bold;
+    font-display: fallback;
 }
 
 @font-face {
@@ -284,6 +289,7 @@ main {
     src: local("Actay"), url("./font/ActayWide-BoldItalic.otf") format("opentype");
     font-weight: bold;
     font-style: italic;
+    font-display: fallback;
 }
 
 /*end of fonts*/
