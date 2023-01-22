@@ -45,39 +45,60 @@
     </section>
 
     <section class="portal-section-container">
-        <section class="portal-section">
+        <section class="portal-section" id="portal">
             <div class="portal-locations-container">
                 <h3>Stand<span class="hex">&#x2B21;</span>rte</h3>
                 <div class="slider">
-                    <!--                    we want to add two arrows for the slider and a p tag as text, it will be a text slider -->
+                    <!-- We want to add two arrows for the slider and a p tag as text, it will be a text slider -->
                     <img src="./assets/arrow_back.svg" alt="arrow back" class="clickable-item" id="back-arrow">
                     <p class="fade-in">Portale</p>
                     <img src="./assets/arrow_forward.svg" alt="arrow forward" class="clickable-item" id="forward-arrow">
                 </div>
             </div>
-            <img src="./assets/Portal.png" alt="Portal" id="portal">
+            <img src="./assets/Portal.png" alt="Portal">
         </section>
     </section>
 
-    <section id="portal-info-section">
-        <div style="text-align: center;">
-            <img src="./assets/Karte.png" width=1107 alt="Weltkarte">
+    <section class="portal-pros-section-container">
+        <h3> Warum Portal-Core? </h3>
+        <div>
+            <ul class="portal-pros-section">
+                <li>Umwelt&shy;freundlich</li>
+                <li>Schnelles Reisen</li>
+                <li>Günstig</li>
+            </ul>
         </div>
-        <ul>
-            <li>Umweltfreundlich</li>
-            <li>Schnelles Reisen</li>
-            <li>Günstig</li>
-        </ul>
-        <p>
-            Wir von Portal Core präsentieren die neueste Technologie aus der Reisewelt: Die Portaltechnologie! <br>
-            Unser Ziel ist es rund um den Globus bahnhofartige Zentren mit Portalen statt Gleisen zu errichten. Durch
-            die
-            Nutzung dieser Portalbahnhöfe, oder Portal Stations, kommt man im handumdrehen überall hin. Dies spart nicht
-            nur
-            lästige Reisezeit und Flugzeugemissionen, sondern auch Geld, da unsere Portaltechnologie äußerst
-            energiesparend
-            und somit überraschend günstig ist. Vergessen sie lange Flugreisen und reisen sie´ab sofort mit Portal Core!
-        </p>
+    </section>
+
+    <section class="portal-info-section-container" id="portal-info">
+        <h3>Vorstellung</h3>
+        <div class="portal-info-section">
+            <div lang="de" class="portal-info-text">
+                <p>
+                    Wir von Portal Core präsentieren die neueste Tech&shy;nologie aus der Reise&shy;welt: Die Portal&shy;technologie!
+                </p>
+                <p>
+                    Unser Ziel ist es rund um den Globus bahnhof&shy;artige Zentren mit Por&shy;talen statt Glei&shy;sen
+                    zu errichten.
+                </p>
+                <p>
+                    Durch die
+                    Nutzung dieser Portal&shy;bah&shy;nhöfe, oder Portal Stations, kommt man im hand&shy;umdrehen
+                    überall hin.
+                    Dies spart nicht nur
+                    lästige Reise&shy;zeit und Flug&shy;zeug&shy;emissionen, sondern auch Geld, da unsere Portal&shy;technologie
+                    äußerst
+                    energie&shy;sparend
+                    und somit überraschend günstig ist.
+                </p>
+                <p>
+                    Vergessen sie lange Flugreisen und reisen sie ab sofort mit Portal Core!
+                </p>
+            </div>
+            <div class="portal-info-map-container">
+                <img class="portal-info-map" src="./assets/Karte.png" alt="Weltkarte">
+            </div>
+        </div>
     </section>
 
     <section id="team">
@@ -110,7 +131,7 @@
 <script>
     const locations = [
         {
-            name: "PORTALE",
+            name: "Windows XP",
             image: "./assets/Portal_XP.png"
         },
         {
@@ -126,12 +147,8 @@
             image: "./assets/Portal_Paris.png"
         },
         {
-            name: "Ort5",
-            image: "./assets/Portal_Ort5.png"
-        },
-        {
-            name: "Ort1",
-            image: "./assets/Portal_Ort1.png"
+            name: "Berlin",
+            image: "./assets/Portal_Berlin.png"
         }
     ];
 

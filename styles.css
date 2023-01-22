@@ -7,6 +7,19 @@ body, html {
     background: #f7f7f7;
 }
 
+h3 {
+    /*the white-space is here a special case for the unicode character in text to not break*/
+    white-space: nowrap;
+    /*font size is responsive. At biggest screen it is 6.5 rem and at least is 2 rem*/
+    font-size: clamp(2rem, -0.875rem + 8.333vw, 6rem);
+    color: #f4f4f4;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: auto auto 0;
+}
+
+/*Start of navigation (too lazy to move things to separate files, for the sake of this project)*/
+
 nav {
     position: fixed;
     width: 100%;
@@ -51,6 +64,8 @@ nav {
     transform: scale(1.05);
 }
 
+/*End of navigation*/
+
 main {
     margin-top: 100px;
 }
@@ -72,17 +87,19 @@ main {
 }
 
 .introduction-section h1 #first {
-    font-size: clamp(3rem, 10 * (1vw + 1vh) / 2, 7rem);
+    font-size: clamp(3rem, -0.875rem + 8.333vw, 7rem);
     font-weight: 900;
     color: #3b3b3b;
     margin: 0;
     letter-spacing: 1rem;
     word-spacing: 1rem;
     line-height: 1.3;
+    /*// a shadow please for the header that looks clean and elegant, don't exaggerate it though*/
+    text-shadow: 10px 10px 65px #3b3b3b;
 }
 
 .introduction-section h1 #second {
-    font-size: clamp(2rem, 10 * (1vw + 1vh) / 2, 6rem);
+    font-size: clamp(3rem, -0.875rem + 8.333vw, 6rem);
 }
 
 .introduction-section h1 a {
@@ -92,11 +109,12 @@ main {
 
 .introduction-section h1 #third {
     cursor: pointer;
+    /*we want the border bottom to match with the shadow*/
     border-bottom: 5px solid #3b3b3b;
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 .introduction-section h1 #third:hover {
-    transition: all 0.2s ease-in-out;
     box-shadow: 10px 8px 5px #3b3b3b;
 }
 
@@ -111,7 +129,7 @@ main {
 }
 
 .portal-section {
-    margin: 50px;
+    margin: 50px 50px 250px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -127,29 +145,96 @@ main {
     object-fit: cover;
 }
 
-.portal-info-section {
+.portal-info-section-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     text-align: center;
+    background: linear-gradient(to bottom, #7F7F7F 0%, #5B5B5B 60%);
 }
 
-.portal-locations-container h3 {
-    /*the white-space is here a special case for the unicode character in text to not break*/
-    white-space: nowrap;
-    /*clamp font size. Max 7rem and min 3rem*/
-    font-size: clamp(3rem, 7 * (1vw + 1vh) / 2, 7rem);
+.portal-info-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 50px;
+}
+
+.portal-info-text {
+    max-width: 600px;
+    text-align: justify;
+    font-size: clamp(1rem, 3 * (1vw + 1vh) / 2, 1.5rem);
     color: #f4f4f4;
+    margin: 32px;
+    padding: 0;
+}
+
+.portal-info-map-container {
+    margin: 0;
+}
+
+.portal-info-map {
+    width: clamp(400px, 50vw, 800px);
+    height: clamp(200px, 25vw, 400px);
+}
+
+.portal-pros-section-container {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(to bottom, #5b5b5b 0%, #7f7f7f 60%);
+}
+
+.portal-pros-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 300px));
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    margin: 0 50px 50px;
+}
+
+.portal-pros-section li {
+    list-style-type: none;
+    margin: 25px;
+    padding: 32px;
     text-transform: uppercase;
-    font-weight: 400;
-    margin: auto;
+    font-size: clamp(0.8rem, -0.875rem + 8.333vw, 2rem);
+    color: #f4f4f4;
+    border-radius: 10px;
+    background: #5b5b5b;
+    box-shadow: 0 0 10px #5b5b5b;
+}
+
+.portal-pros-section li:nth-child(1) {
+    grid-column: 1 / auto;
+    grid-row: 1 / auto;
+}
+
+.portal-pros-section li:nth-child(2) {
+    grid-column: 2 / auto;
+    grid-row: 2 / auto;
+}
+
+.portal-pros-section li:nth-child(3) {
+    grid-column: 3 / auto;
+    grid-row: 3 / auto;
 }
 
 .portal-locations-container {
     justify-self: flex-end;
 }
+
+/*Animation stuff for slider - start*/
 
 .slide-in {
     animation: slideIn 0.3s ease-in-out;
@@ -211,6 +296,9 @@ main {
     }
 }
 
+/*Animation stuff for slider - end*/
+
+/*Slider CSS start*/
 .slider {
     display: flex;
     align-items: center;
@@ -218,7 +306,7 @@ main {
 }
 
 .slider p {
-    min-width: clamp(100px, 3 * (1vw + 1vh) / 2, 200px);
+    width: clamp(50px, 30vw, 300px);
     font-size: clamp(2rem, 3 * (1vw + 1vh) / 2, 5rem);
     color: #f6f6f6;
     margin: 0 5rem;
@@ -247,6 +335,8 @@ main {
     /*is important to rotate unicode-characters*/
     display: inline-block;
 }
+
+/*Slider CSS end*/
 
 /*start of fonts*/
 
