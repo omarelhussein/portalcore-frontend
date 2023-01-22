@@ -371,6 +371,12 @@ h4 {
     width: 100%;
 }
 
+.radio-spot-text {
+    margin-top: 0;
+    color: #1a1a1a;
+    font-size: clamp(.8rem, -0.875rem + 8.333vw, 1.5rem);
+}
+
 #audio-placeholder {
     content: "";
     display: block;
