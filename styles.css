@@ -371,6 +371,67 @@ h4 {
     width: 100%;
 }
 
+.team-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    text-align: center;
+    background: linear-gradient(to bottom, #6f6f6f 0%, #A1A1A1 60%);
+    padding: 200px 20px;
+}
+
+.avatar {
+    justify-self: center;
+    align-self: center;
+    width: clamp(200px, 50vw, 300px);
+    height: clamp(200px, 50vw, 300px);
+    filter: drop-shadow(0 0 0.75rem #f7f7f7);
+    margin: 24px 0;
+}
+
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-section li {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 25px;
+    padding: 32px;
+    width: clamp(100px, 50vw, 400px);
+    text-transform: uppercase;
+    font-size: clamp(0.8rem, -0.875rem + 8.333vw, 1.5rem);
+    color: #f4f4f4;
+    border-radius: 10px;
+    background: #5b5b5b;
+}
+
+.team-section li:nth-child(1) {
+    align-self: flex-start;
+    box-shadow: 0 0 30px #09323a;
+}
+
+.team-section li:nth-child(2) {
+    align-self: flex-start;
+    box-shadow: 0 0 30px #000000;
+}
+
+.team-section li:nth-child(3) {
+    align-self: flex-start;
+    box-shadow: 0 0 30px #8B5E3C;
+}
+
+.team-section li:nth-child(4) {
+    align-self: flex-end;
+    box-shadow: 0 0 30px #2b542b;
+}
+
 .radio-spot-text {
     margin-top: 0;
     color: #1a1a1a;
@@ -475,7 +536,7 @@ h4 {
     max-width: 500px;
 }
 
-#next-stop, #expand-map, #campaign, #download-plakat, #download-radio-spot   {
+#next-stop, #expand-map, #campaign, #download-plakat, #download-radio-spot {
     width: clamp(150px, 8 * (1vw + 1vh) / 2, 300px) !important;
     height: clamp(150px, 8 * (1vw + 1vh) / 2, 300px) !important;
     justify-self: center;
