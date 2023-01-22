@@ -7,6 +7,7 @@
     <title> PortalCore - Core of Fast Travel </title>
     <link rel="icon" href="./assets/Hexagone.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
 </head>
 
 <body>
@@ -30,49 +31,23 @@
         </a>
     </div>
     <div class="nav-items">
-        <a href="#portal">Das Portal</a>
-        <a href="#campagne">Kampagne</a>
+        <a href="#portal-info">Portal-Core</a>
+        <a href="#campaign-info">Kampagne</a>
         <a href="#team">Team</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#sources">Quellen</a>
     </div>
 </nav>
 
 <main>
-    <section class="introduction-section-container">
-        <section class="introduction-section">
-            <h1><span id="first">DIE ZUKUNFT <br> <span id="second">BEGINNT <span id="third"><a
-                    href="#portal">HIER</a></span></span></span></h1>
-        </section>
-    </section>
-
-    <section class="portal-section-container">
-        <section class="portal-section" id="portal">
-            <div class="portal-locations-container">
-                <h3>Stand<span class="hex">&#x2B21;</span>rte</h3>
-                <div class="slider">
-                    <!-- We want to add two arrows for the slider and a p tag as text, it will be a text slider -->
-                    <img src="./assets/arrow_back.svg" alt="arrow back" class="clickable-item" id="back-arrow">
-                    <p class="fade-in">Portale</p>
-                    <img src="./assets/arrow_forward.svg" alt="arrow forward" class="clickable-item" id="forward-arrow">
-                </div>
-            </div>
-            <img src="./assets/Portal.png" alt="Portal">
-        </section>
-    </section>
-
-    <section class="portal-pros-section-container">
-        <h3> Warum Portal-Core? </h3>
-        <div class="portal-pros-section">
-            <ul class="portal-pros-section-list">
-                <li>Umwelt&shy;freundlich</li>
-                <li>Schnelles Reisen</li>
-                <li>Geringe Preise</li>
-            </ul>
+    <div class="introduction-section-container">
+        <div class="introduction-section">
+            <h1><span id="first">DIE ZUKUNFT <br> <span id="second">BEGINNT <span id="third">HIER</span></span></span>
+            </h1>
         </div>
-    </section>
+    </div>
 
     <section class="portal-info-section-container" id="portal-info">
-        <h3>Vorstellung</h3>
+        <h3>Wer sind wir?</h3>
         <div class="portal-info-section">
             <div lang="de" class="portal-info-text">
                 <p>
@@ -98,17 +73,71 @@
             </div>
             <div class="portal-info-map-container">
                 <img class="portal-info-map" src="./assets/Karte.png" alt="Weltkarte">
+                <img class="clickable-item" src="./assets/expand_more_icon.svg" alt="expand more" id="expand-map">
             </div>
         </div>
     </section>
 
-    <section class="campagne-section-container">
-        <ul class="campagne-section">
-            <li><a href="./assets/Plakat.jpg" download>Plakat</a></li>
-            <li><a href="./assets/Radiospot.mp3" download>Radiospot</a></li>
-            <li><a href="./assets/Quellen.pdf" download>Quellen</a></li>
-            <li>Kontakt</li>
-        </ul>
+    <section class="portal-section-container">
+        <div class="portal-section" id="portal">
+            <div class="portal-locations-container">
+                <h3>Stand<span class="hex">&#x2B21;</span>rte</h3>
+                <div class="slider">
+                    <!-- We want to add two arrows for the slider and a p tag as text, it will be a text slider -->
+                    <img src="./assets/arrow_back.svg" alt="arrow back" class="clickable-item" id="back-arrow">
+                    <p class="fade-in">Portale</p>
+                    <img src="./assets/arrow_forward.svg" alt="arrow forward" class="clickable-item" id="forward-arrow">
+                </div>
+            </div>
+            <img src="./assets/Portal.png" alt="Portal">
+        </div>
+        <img class="clickable-item" src="./assets/expand_more_icon_white.svg" alt="expand more" id="next-stop">
+    </section>
+
+    <section class="portal-pros-section-container" id="pros">
+        <h3> Warum P<span class="hex">&#x2B21;</span>rtal-C<span class="hex">&#x2B21;</span>re? </h3>
+        <div class="portal-pros-section">
+            <ul class="portal-pros-section-list">
+                <li>Umwelt&shy;freundlich</li>
+                <li>Schnelles Reisen</li>
+                <li>Geringe Preise</li>
+            </ul>
+        </div>
+        <img class="clickable-item" src="./assets/expand_more_icon.svg" alt="expand more" id="campaign">
+    </section>
+
+
+    <section class="campaign-section-container" id="campaign-info">
+        <h3>Kampagne</h3>
+        <div class="plakat">
+            <h4>PLAKAT</h4>
+            <div class="alignment-container">
+                <img class="plakat-img" src="./assets/Plakat.jpg" alt="Poster">
+                <a class="alignment-container" download="Plakat.jpg" href="./assets/Plakat.jpg"
+                   title="Plakat herunterladen">
+                    <img src="./assets/download_icon.svg" alt="download icon" class="clickable-item"
+                         id="download-plakat">
+                </a>
+            </div>
+        </div>
+        <div class="plakat">
+            <h4>RADIO-SPOT</h4>
+            <div class="alignment-container">
+                <div class="controls">
+                    <div id="waveform"></div>
+                    <div class="controls-buttons">
+                        <img src="./assets/back-icon.svg" alt="back" class="clickable-item" id="back-radio-spot">
+                        <img src="./assets/play_icon.svg" alt="play" class="clickable-item" id="play-radio-spot">
+                        <img src="./assets/pause_icon.svg" alt="pause" class="clickable-item" id="pause-radio-spot">
+                    </div>
+                </div>
+                <a download="Radio-Spot.mp3" href="./assets/Radiospot_result_v5-2.mp3"
+                   title="Radio-Spot herunterladen">
+                    <img src="./assets/download_icon.svg" alt="download icon" class="clickable-item"
+                         id="download-radio-spot">
+                </a>
+            </div>
+        </div>
     </section>
 
     <section class="team-section-container" id="team">
@@ -201,6 +230,95 @@
 
     document.getElementById("back-arrow").addEventListener("click", previousLocation);
     document.getElementById("forward-arrow").addEventListener("click", nextLocation);
+
+    //     code for map click event goes here:
+    const clickableIcon = document.getElementById("expand-map");
+    clickableIcon.addEventListener("click", () => {
+        window.scrollTo({
+            top: document.getElementById("portal").offsetTop,
+            behavior: "smooth"
+        });
+        window.location.hash = "portal";
+    });
+
+    //   code for "hier" click event goes here:
+    const clickableText = document.getElementById("first");
+    clickableText.addEventListener("click", () => {
+        window.scrollTo({
+            top: document.getElementById("portal-info").offsetTop,
+            behavior: "smooth"
+        });
+        window.location.hash = "portal-info";
+    });
+
+    //   code for "next stop" click event goes here:
+    const nextStop = document.getElementById("next-stop");
+    nextStop.addEventListener("click", () => {
+        window.scrollTo({
+            top: document.getElementById("pros").offsetTop,
+            behavior: "smooth"
+        });
+        window.location.hash = "pros";
+    });
+
+    //   code for "pros" click event goes here:
+    const pros = document.getElementById("pros");
+    pros.addEventListener("click", () => {
+        window.scrollTo({
+            top: document.getElementById("campaign-info").offsetTop,
+            behavior: "smooth"
+        });
+        window.location.hash = "campaign-info";
+    });
+
+    //  code for wave form goes here:
+    const wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: '#f6f6f6',
+        progressColor: '#2c3e50',
+        barWidth: 2,
+        barRadius: 1,
+        cursorWidth: 1,
+        cursorColor: '#2c2c2c',
+        height: 200,
+        responsive: true,
+        fillParent: true,
+    });
+    wavesurfer.load('./assets/Radiospot_result_v5-2.mp3');
+
+    // audio controls
+    const playButton = document.getElementById("play-radio-spot");
+    const pauseButton = document.getElementById("pause-radio-spot");
+    const backButton = document.getElementById("back-radio-spot");
+
+    function checkPlaying() {
+        if (wavesurfer.isPlaying()) {
+            playButton.style.display = "none";
+            pauseButton.style.display = "block";
+        } else {
+            playButton.style.display = "block";
+            pauseButton.style.display = "none";
+        }
+    }
+
+    checkPlaying();
+
+    playButton.addEventListener("click", () => {
+        wavesurfer.play();
+        checkPlaying();
+    });
+
+    pauseButton.addEventListener("click", () => {
+        wavesurfer.pause();
+        checkPlaying();
+    });
+
+    backButton.addEventListener("click", () => {
+        wavesurfer.stop();
+        checkPlaying();
+    });
+
+
 </script>
 
 </body>

@@ -71,7 +71,9 @@ main {
 }
 
 /*Make feedback rectangle disappear on mobile*/
-* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 
 .introduction-section-container {
@@ -126,20 +128,20 @@ main {
 }
 
 .introduction-section h1 #third:hover {
-    box-shadow: 10px 8px 5px #3b3b3b;
+    box-shadow: 10px 10px 6px #3b3b3b;
 }
 
 .portal-section-container {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom, #6f6f6f 0%, #5b5b5b 60%);
+    background: linear-gradient(to bottom, #2b2b2b 0%, #5b5b5b 60%);
     height: fit-content;
     align-items: center;
     justify-content: center;
+    padding: 150px 50px;
 }
 
 .portal-section {
-    margin: 150px 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -164,7 +166,7 @@ main {
     justify-content: center;
     height: fit-content;
     text-align: center;
-    background: linear-gradient(to bottom, #7F7F7F 0%, #5B5B5B 60%);
+    background: linear-gradient(to bottom, #6f6f6f 0%, #2b2b2b 60%);
 }
 
 .portal-info-section {
@@ -188,34 +190,67 @@ main {
 
 .portal-info-map-container {
     margin: 0;
+    filter: drop-shadow(0 0 0.75rem #f7f7f7);
+    border-radius: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .portal-info-map {
+    border-radius: 45px;
     width: clamp(400px, 50vw, 800px);
     height: clamp(200px, 25vw, 400px);
 }
 
+.portal-info-text p:first-child {
+    border: 2px solid #3c78a8;
+    border-radius: 45px;
+    padding: 16px 64px;
+}
+
+.portal-info-text p:nth-child(2) {
+    border: 2px solid #8B5E3C;
+    border-radius: 45px;
+    padding: 16px 64px;
+}
+
+.portal-info-text p:nth-child(3) {
+    border: 2px solid #2b542b;
+    border-radius: 45px;
+    padding: 16px 64px;
+}
+
+.portal-info-text p:nth-child(4) {
+    border: 2px solid #1c1a1a;
+    border-radius: 45px;
+    padding: 16px 64px;
+}
+
 .portal-pros-section-container {
-    padding-top: 150px;
+    padding: 150px 0;
     justify-content: center;
     display: flex;
     flex-direction: column;
     height: fit-content;
     text-align: center;
-    background: linear-gradient(to bottom, #5b5b5b 0%, #7f7f7f 60%);
+    background: linear-gradient(to bottom, #5b5b5b 0%, #2b2b2b 60%);
 }
 
 .portal-pros-section-list {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 24px 200px 150px;
+    margin: 24px 200px 16px;
 }
 
+/*responsivity for stairs layout*/
 @media (max-width: 850px) {
     .portal-pros-section-list {
         align-content: center;
     }
+
     .portal-pros-section-container {
         align-items: center;
     }
@@ -231,23 +266,115 @@ main {
     color: #f4f4f4;
     border-radius: 10px;
     background: #5b5b5b;
-    box-shadow: 0 0 10px #5b5b5b;
+    box-shadow: 0 0 30px #f4f4f4;
 }
 
 .portal-pros-section li:nth-child(1) {
     align-self: flex-start;
+    background: #2b542b;
 }
 
 .portal-pros-section li:nth-child(2) {
+    background: #3c78a8;
     align-self: center;
 }
 
 .portal-pros-section li:nth-child(3) {
+    background: #8B5E3C;
     align-self: flex-end;
 }
 
 .portal-locations-container {
     justify-self: flex-end;
+}
+
+.campaign-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    text-align: center;
+    background: linear-gradient(to bottom, #2b2b2b 0%, #6f6f6f 60%);
+    padding: 200px 20px;
+}
+
+h4 {
+    /*the white-space is here a special case for the unicode character in text to not break*/
+    white-space: nowrap;
+    /*font size is responsive. At biggest screen it is 6.5 rem and at least is 2 rem*/
+    font-size: clamp(1.8rem, -0.875rem + 8.333vw, 4rem);
+    letter-spacing: .5rem;
+    color: #f4f4f4;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.plakat {
+    border: 2px solid #f4f4f4;
+    border-radius: 60px;
+    padding: 16px 64px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-start;
+    width: 600px;
+}
+
+.controls-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-start;
+    width: 600px;
+}
+
+.alignment-container {
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-end;
+    align-items: center;
+}
+
+.plakat-img {
+    width: clamp(350px, 50vw, 550px);
+    height: clamp(150px, 50vw, 350px);
+    object-fit: scale-down;
+    filter: drop-shadow(0 0 0.75rem #f7f7f7);
+}
+
+.radio-spot {
+    display: flex;
+}
+
+.campaign-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#audio-placeholder {
+    content: "";
+    display: block;
+    width: 500px;
 }
 
 /*Animation stuff for slider - start*/
@@ -335,6 +462,18 @@ main {
     height: clamp(50px, 8 * (1vw + 1vh) / 2, 200px) !important;
     /*    disable icon selection*/
     user-select: none; /* Standard */
+}
+
+#waveform {
+    min-width: 300px;
+    max-width: 500px;
+}
+
+#next-stop, #expand-map, #campaign, #download-plakat, #download-radio-spot   {
+    width: clamp(150px, 8 * (1vw + 1vh) / 2, 300px) !important;
+    height: clamp(150px, 8 * (1vw + 1vh) / 2, 300px) !important;
+    justify-self: center;
+    align-self: center;
 }
 
 .clickable-item {
@@ -431,3 +570,21 @@ main {
 }
 
 /*end of scroll bar design*/
+
+/*Start of footer*/
+
+footer {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background: linear-gradient(to right, #3b3b3b, #6f6f6f);
+    z-index: 1;
+    text-transform: uppercase;
+    transition: top 0.5s ease-in-out;
+    height: 250px;
+    align-items: center;
+    bottom: 0;
+    /*make a box shadow that makes the footer look a bit 3D */
+    box-shadow: 0 -1px 20px 0 #2b2b2b;
+}
